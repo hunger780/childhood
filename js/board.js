@@ -121,7 +121,7 @@ function completionTest(playerid){
         }
     }
     //cross axis test 
-    for(i=0;i<outerBound;i++){
+    for(i=0;i<outerBound && !completionStatus;i++){
         if(board[i][i]!=playerid){
             break;
         }
@@ -132,17 +132,14 @@ function completionTest(playerid){
        
     }
 
-    for(i=0;i<outerBound && !completionStatus;i++){
-        for(j=outerBound-1;j<0;j--){
-            if(board[i][j]!=playerid){
-                break;
-                
-            }
-            else if(j==outerBound-1){
-                completionStatus = true;
-               
-                break;
-            }
+    for(i=0,j=outerBound-1;i<outerBound && j>=0 && !completionStatus;i++,j--){
+        if(board[i][j]!=playerid){
+            break;
+            
+        }
+        else if(i==outerBound-1){
+            completionStatus = true;
+            break;
         }
     }
 
