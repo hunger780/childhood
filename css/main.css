@@ -1,0 +1,71 @@
+
+body{
+    margin: 0;
+}
+
+.outline {
+    
+    display: block;
+  }
+.logarea{
+    margin: 50px;
+
+}
+  .flex-container {
+    /* We first create a flex layout context */
+    display: flex;
+    
+    /* Then we define the flow direction 
+       and if we allow the items to wrap 
+     * Remember this is the same as:
+     * flex-direction: row;
+     * flex-wrap: wrap;
+     */
+    flex-flow: row wrap;
+    
+    /* Then we define how is distributed the remaining space */
+    justify-content: space-around;
+    
+    padding: 25px;
+    margin: 25px;
+    list-style: none;
+    flex-wrap: wrap;
+    
+
+  }
+  
+  .flex-item {
+    background: tomato;
+    padding: 5px;
+
+    margin-top: 10px;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+   
+  }
+  .flex-item:hover{
+    background: grey;
+  }
+
+  .draggable{
+    padding : 1 rem;
+    cursor:move;
+  }
+
+  .draggable.dragging {
+    opacity: .5;
+  }
+  
+  .red{
+    background-color: red;
+  }
+
+  .blue{
+    background-color: blue;
+  }
