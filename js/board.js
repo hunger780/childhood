@@ -55,7 +55,6 @@ function makeSelection(elementId){
 
 function validateMove(elementA, elementB){
 
-    
     var elementAValue = elementA.textContent;
     var elementBValue = elementB.textContent;
     var fromx = parseInt(elementAValue.split(",")[0]);
@@ -196,26 +195,45 @@ function swapPlayer(){
     }
 
 }
+
+function validateSelection(elementId){
+    //validate if the node is selected by other player
+    var node = document.getElementById(elementId);
+    var nodeValue = node.textContent;
+    var posx = parseInt(nodeValue.split(",")[0]);
+    var posy = parseInt(nodeValue.split(",")[1]);
+    var posValue  = board[posx][posy];
+    
+    if(posValue!='X'){
+        logMessage("Node is already taken");
+        return false;
+    }
+    return true;
+}
+
 function selectNode(e){
     
     if(selectMode){
-        makeSelection(e.target.id);
-        if(completionTest(currentPlayerId)){
-            alert("Winner - Player  "+currentPlayerId);
-        }
-    
+        if(validateSelection(e.target.id)){
+            makeSelection(e.target.id);
+            if(completionTest(currentPlayerId)){
+                alert("Winner - Player  "+currentPlayerId);
+            }
 
-        totalSelection++;
-        if(totalSelection==6){
-            logMessage("Node selection complete. Player 1 can make a move");
-            playMode = true;selectMode=false;
+            totalSelection++;
+            if(totalSelection==6){
+                logMessage("Node selection complete. Player 1 can make a move");
+                playMode = true;selectMode=false;
             
+            }
+            swapPlayer();
         }
-        swapPlayer();
+        else{
+            logMessage("Player "+currentPlayerId+" to select the node");
+        }
     }
-    else if(playMode){
-        //Play mode
-    }
+   
+    
 
 }
 
