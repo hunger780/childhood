@@ -1,71 +1,70 @@
-
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
 
 .outline {
-    
-    display: block;
-  }
-.logarea{
-    margin: 50px;
-
+  display: block;
 }
-  .flex-container {
-    /* We first create a flex layout context */
-    display: flex;
-    
-    /* Then we define the flow direction 
+.logarea {
+  margin: 50px;
+}
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+
+  /* Then we define the flow direction 
        and if we allow the items to wrap 
      * Remember this is the same as:
      * flex-direction: row;
      * flex-wrap: wrap;
      */
-    flex-flow: row wrap;
-    
-    /* Then we define how is distributed the remaining space */
-    justify-content: space-around;
-    
-    padding: 25px;
-    margin: 25px;
-    list-style: none;
-    flex-wrap: wrap;
-    
+  flex-flow: row wrap;
 
-  }
-  
-  .flex-item {
-    background: tomato;
-    padding: 5px;
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
 
-    margin-top: 10px;
-    line-height: 150px;
-    color: white;
-    font-weight: bold;
-    font-size: 3em;
-    height: 25px;
-    width: 25px;
-    background-color: #bbb;
-    border-radius: 50%;
-   
-  }
-  .flex-item:hover{
-    background: grey;
-  }
+  padding: 25px;
+  margin: 25px;
+  list-style: none;
+  flex-wrap: wrap;
+}
 
-  .draggable{
-    padding : 1 rem;
-    cursor:move;
-  }
+.flex-item {
+  background: tomato;
+  padding: 5px;
 
-  .draggable.dragging {
-    opacity: .5;
-  }
-  
-  .red{
-    background-color: red;
-  }
+  margin-top: 10px;
+  line-height: 150px;
+  color: #ffffff00;
+  font-weight: bold;
+  font-size: 3em;
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+}
+.flex-item:hover {
+  background: grey;
+}
 
-  .blue{
-    background-color: blue;
-  }
+.draggable {
+  padding: 1 rem;
+  cursor: move;
+}
+
+.draggable.dragging {
+  opacity: 0.5;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.image {
+  background-image: url(../background.svg);
+  background-repeat: no-repeat;
+}
