@@ -20,6 +20,7 @@ draggables.forEach(draggable => {
     
     if(!playMode){
       logMessage("Node movement is not allowed as node selection is not complete");
+      logMessage("Player "+currentPlayerId+" to select the node");
     }
     else{
       move(data, e.target.id);
